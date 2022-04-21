@@ -3,6 +3,7 @@ using Autofac.Features.AttributeFilters;
 using DataAccess.DbContexts;
 using DataAccess.DbContexts.TicketSystemDb;
 using DataAccess.Repositories.Roles;
+using DataAccess.Repositories.Tickets;
 
 namespace TicketSystem.Modules.DA
 {
@@ -26,6 +27,7 @@ namespace TicketSystem.Modules.DA
 
             //// Register Repositories
             builder.RegisterType<RoleRepository>().As<IRoleRepository>().WithAttributeFiltering();
+            builder.RegisterType<TicketRepository>().As<ITicketRepository>().WithAttributeFiltering();
         }
     }
 }
