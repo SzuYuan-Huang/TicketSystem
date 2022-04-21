@@ -1,0 +1,72 @@
+﻿.container {
+    width: 70%;
+    min-width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.kanban-heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: sans-serif;
+}
+
+.kanban-heading-text {
+    font-size: 1.8rem;
+    background-color: tomato;
+    padding: 0.8rem 1.7rem;
+    border-radius: 0.5rem;
+    margin: 1rem;
+}
+
+.kanban-board {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: sans-serif;
+}
+
+.kanban-block {
+    padding: 0.6rem;
+    width: 30.5%;
+    min-width: 14rem;
+    min-height: 4.5rem;
+    border-radius: 0.3rem;
+}
+
+#new {
+    background-color: #fec6d1;
+}
+
+#active {
+    background-color: #ffaf00;
+}
+
+#resolve {
+    background-color: #0080ff;
+}
+
+#done {
+    background-color: #018b01;
+}
+
+body {
+    background-color: black;
+}
+
+.kanban-create-ticket {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: sans-serif;
+}
+
+#task-button {
+    font-size: 1.8rem;
+    background-color: peru;
+    padding: 0.8rem 1.7rem;
+    border-radius: 0.5rem;
+    margin: 1rem;
+}

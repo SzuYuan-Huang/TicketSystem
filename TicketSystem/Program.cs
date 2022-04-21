@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using TicketSystem.Modules.BL;
 using TicketSystem.Modules.DA;
 
 namespace TicketSystem
@@ -38,6 +39,7 @@ namespace TicketSystem
         private static void RegisterModule(ContainerBuilder container)
         {
             container.RegisterModule(new DaModule());
+            container.RegisterModule(new BlModule());
         }
     }
 }

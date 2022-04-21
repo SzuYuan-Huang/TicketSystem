@@ -52,5 +52,27 @@ namespace TicketSystem.Controllers.Api
         {
             this._ticketService.CreateTicket(entity);
         }
+
+        /// <summary>
+        /// 更新工單
+        /// </summary>
+        /// <param name="entity">更新工單資料</param>
+        [Route("UpdateTicket")]
+        [HttpPut]
+        public void UpdateTicket(UpdateTicketEntity entity)
+        {
+            this._ticketService.UpdateTicket(entity);
+        }
+
+        /// <summary>
+        /// 刪除工單
+        /// </summary>
+        /// <param name="id">序號</param>
+        [Route("DeleteTicket")]
+        [HttpDelete]
+        public void DeleteTicket(int id)
+        {
+            this._ticketService.DeleteTicket(id);
+        }
     }
 }

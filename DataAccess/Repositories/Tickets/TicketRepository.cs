@@ -98,5 +98,57 @@ namespace DataAccess.Repositories.Tickets
                 connection.Execute(sql, param);
             }
         }
+
+        /// <summary>
+        /// 更新工單
+        /// </summary>
+        /// <param name="updateTicketData">更新工單資料</param>
+        public void UpdateTicket(TicketModel updateTicketData)
+        {
+            var sql = @" 
+            UPDATE dbo.Ticket
+            SET Ticket_Title = @Title
+               ,Ticket_Description = @Description
+               ,Ticket_TypeDef = @TypeDef
+               ,Ticket_StatusDef = @StatusDef
+               ,Ticket_AssignUserId = @AssignUserId
+            WHERE Ticket_Id = @Id";
+
+            var param = new
+            {
+                Id = updateTicketData.Ticket_Id,
+                Title = updateTicketData.Ticket_Title,
+                Description = updateTicketData.Ticket_Description,
+                TypeDef = updateTicketData.Ticket_TypeDef,
+                StatusDef = updateTicketData.Ticket_StatusDef,
+                AssignUserId = updateTicketData.Ticket_AssignUserId
+            };
+
+            using (var connection = this._ticketSystemDbContext.DbConnection())
+            {
+                connection.Execute(sql, param);
+            }
+        }
+
+        /// <summary>
+        /// 刪除工單
+        /// </summary>
+        /// <param name="id">序號</param>
+        public void DeleteTicket(int id)
+        {
+            var sql = @" 
+            DELETE dbo.Ticket
+            WHERE Ticket_Id = @Id";
+
+            var param = new
+            {
+                Id = id,
+            };
+
+            using (var connection = this._ticketSystemDbContext.DbConnection())
+            {
+                connection.Execute(sql, param);
+            }
+        }
     }
 }

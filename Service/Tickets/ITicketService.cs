@@ -22,5 +22,17 @@ namespace Service.Tickets
         /// </summary>
         /// <param name="entity">工單資料</param>
         void CreateTicket(CreateTicketEntity entity);
+
+        /// <summary>
+        /// 更新工單
+        /// </summary>
+        /// <param name="entity">工單資料</param>
+        void UpdateTicket(UpdateTicketEntity entity);
+
+        /// <summary>
+        /// 刪除工單
+        /// </summary>
+        /// <param name="id">序號</param>
+        void DeleteTicket(int id);
     }
 }
