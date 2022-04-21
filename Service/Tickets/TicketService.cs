@@ -74,5 +74,36 @@ namespace Service.Tickets
                 Ticket_CreatedUserId = entity.CreatedUserId
             });
         }
+
+        /// <summary>
+        /// 更新工單
+        /// </summary>
+        /// <param name="entity">工單資料</param>
+        public void UpdateTicket(UpdateTicketEntity entity)
+        {
+            if (entity == null)
+            {
+                return;
+            }
+
+            this._ticketRepository.UpdateTicket(new TicketModel
+            {
+                Ticket_Id = entity.Id,
+                Ticket_Title = entity.Title,
+                Ticket_Description = entity.Description,
+                Ticket_TypeDef = entity.TypeDef,
+                Ticket_StatusDef = entity.StatusDef,
+                Ticket_AssignUserId = entity.AssignUserId
+            });
+        }
+
+        /// <summary>
+        /// 刪除工單
+        /// </summary>
+        /// <param name="id">序號</param>
+        public void DeleteTicket(int id)
+        {
+            this._ticketRepository.DeleteTicket(id);
+        }
     }
 }
