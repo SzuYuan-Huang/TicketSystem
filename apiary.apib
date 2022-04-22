@@ -1,0 +1,73 @@
+FORMAT: 1A
+HOST: https://www.ticketsystem.com/api
+
+# TicketSystem
+
+工單服務 API
+
+## Ticket Collection [/ticket]
+
+### Get a Ticket [GET]
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Bearer [TOKEN]
+            
+    + Body
+
+            {
+                "Id": 1
+            }
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "Data":
+                {
+                    "Id": 1,
+                    "Title" : "標題",
+                    "Description": "描述",
+                    "TypeDef": "Bug",
+                    "StatusDef": "Active",
+                    "AssignUserId": 1,
+                    "CreatedUserId": 2
+                },
+                "TimeStamp": "1650610905",
+                "ErrorMeesage": null
+            }
+
+### Create a New Ticket [POST]
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Bearer [TOKEN]
+            
+    + Body
+
+            {
+                "Title" : "標題",
+                "Description": "描述",
+                "TypeDef": "Bug",
+                "StatusDef": "Active",
+                "AssignUserId": 1,
+                "CreatedUserId": 2
+            }
+
++ Response 201 (application/json)
+
+    + Body
+
+            {
+                "Data":
+                {
+                    "Id": 2
+                },
+                "TimeStamp": "1650610905",
+                "ErrorMeesage": null
+            }
