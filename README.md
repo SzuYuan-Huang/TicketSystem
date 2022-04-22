@@ -35,4 +35,5 @@
    - Ticket_CreatedUserId (建立人員序號)
      - 此欄位提供人員在建立時記錄當下是誰，方便被指派的人員可以有依據知道誰指派的任務
 
-## API 文檔 (Not yet)
+## API 文檔 (Beta) ApiAry Tool
+<img src="./API Sample.PNG">
